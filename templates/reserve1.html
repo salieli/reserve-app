@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=deviece-width,initial-scale">
+    <title>场地预约登录</title>
+    <style>
+        [v-clock] {
+            /*把模板隐藏*/
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {% verbatim %}
+    <div id="app">
+        <div class="notice" v-for="(reserveData,i) in reserveDataList">
+            {{reserveData.place}}
+            <div v-for="(reserve,j) in reserveData.reserveData">
+                <b>{{reserve.date}}</b>
+                <span v-for="(item,l) in reserve.reserveList">{{item}}</span>
+            </div>
+        </div>
+
+
+    </div>
+    {% endverbatim %}
+
+    <script src="/static/js/common/vue.js"></script>
+    <script src="/static/js/common/axios.min.js"></script>
+    <script src="/static/js/common/tools.js"></script>
+    <script src="/static/js/common/function.js"></script>
+    <script src="/static/js/app/reserve.js"></script>
+</body>
+
+</html>
